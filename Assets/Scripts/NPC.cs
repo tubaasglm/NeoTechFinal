@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class NPC : MonoBehaviour
 {
+    public DialogueSystem diaSystem;
 
     public Transform ChatBackGround;
     public Transform CharacterImage;
@@ -47,8 +48,6 @@ public class NPC : MonoBehaviour
             dialogueSystem.Names = Name;
             dialogueSystem.dialogueLines = sentences;
             FindObjectOfType<DialogueSystem>().NPCName();
-
-            DesactiveButton();
         }
     }
 
@@ -57,23 +56,6 @@ public class NPC : MonoBehaviour
         FindObjectOfType<DialogueSystem>().OutOfRange();
         this.gameObject.GetComponent<NPC>().enabled = false;
         CharacterImage.gameObject.SetActive(false);
-    }
-    //Button
-    public void DesactiveButton()
-    {
-        button1.SetActive(false);
-        button2.SetActive(false);
-    }
-    public void ActiveButton()
-    {
-        button1.SetActive(true);
-        button2.SetActive(true);
-        Cursor.visible = true;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        ActiveButton();
     }
 }
 

@@ -37,8 +37,6 @@ public class DialogueSystem : MonoBehaviour
     public AudioClip audioClip;
     AudioSource audioSource;
 
-    public bool PanelChoice = false;
-
     void Start()
     {
        audioSource = GetComponent<AudioSource>();
@@ -119,12 +117,6 @@ public class DialogueSystem : MonoBehaviour
             Debug.Log("fini");
             dialogueActive = false;
             DropDialogue();
-
-        }
-
-        if(!PanelChoice)
-        {
-            this.StartDialogue();
         }
     }
 
@@ -196,52 +188,4 @@ public class DialogueSystem : MonoBehaviour
             dialogueBoxGUI.gameObject.SetActive(false);
         }
     }
-
-    public void GiveTheObject()
-    {
-        //si player give the object to Capsule(Guston Father)
-        // alors close the dialogue + the audio HAHAHA begin, TRY AGAIN ! -> collect again the objects to make precious object
-        //Debug.Log("rjrjrjjr");
-        //StartDialogue();
-
-    }
-
-    public void DontGiveObject()
-    {
-        //if player don't give the object 
-        //alors: continue the game
-
-        //DropDialogue();
-        //Debug.Log("Display: try again!");
-        //audio hahaaha begin of Guston Father
-        //Cursor.visible = false;
-        // optButton01.SetActive(false);
-        //optButton02.SetActive(false);
-
-    }
-    /*IEnumerator Type()
-    {
-        foreach (char letter in sentences[index].ToCharArray())
-        {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-    }
-  
-    public void NextDialogue()
-    {
-        //continueButton.SetActive(false);
-        
-        if (index < sentences.Length - 1)
-        {
-            index++;
-            textDisplay.text = "";
-            StartCoroutine(Type());
-        }
-        else
-        {
-            //textDisplay.text = "";
-            Destroy(this);
-        }
-    }*/
 }
