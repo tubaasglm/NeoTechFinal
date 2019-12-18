@@ -11,9 +11,16 @@ public class ChoiceSystem : MonoBehaviour
     public GameObject Choice02;
 
     public int ChoiceMade;
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
     public void ChoiceOption01()
     {
+        
+        
+        Cursor.visible = true;
         TextBox.GetComponent<Text>().text = "That's good stranger. Looks like you made the first choice";
         ChoiceMade = 1;
     }

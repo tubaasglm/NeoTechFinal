@@ -37,9 +37,6 @@ public class DialogueSystem : MonoBehaviour
     public AudioClip audioClip;
     AudioSource audioSource;
 
-    public GameObject optButton01;
-    public GameObject optButton02;
-
     public bool PanelChoice = false;
 
     void Start()
@@ -93,8 +90,8 @@ public class DialogueSystem : MonoBehaviour
         {
             int dialogueLength = dialogueLines.Length;
             int currentDialogueIndex = 0;
-            optButton01.SetActive(true);
-            optButton02.SetActive(true); 
+            //optButton01.SetActive(true);
+            //optButton02.SetActive(true); 
             while (currentDialogueIndex < dialogueLength || !letterIsMultiplied)
             {
                 if (!letterIsMultiplied)
@@ -119,8 +116,10 @@ public class DialogueSystem : MonoBehaviour
                 yield return 0;
             }
             dialogueEnded = false;
+            Debug.Log("fini");
             dialogueActive = false;
             DropDialogue();
+
         }
 
         if(!PanelChoice)
@@ -196,11 +195,6 @@ public class DialogueSystem : MonoBehaviour
             dialogueGUI.SetActive(false);
             dialogueBoxGUI.gameObject.SetActive(false);
         }
-    }
-
-    public void Choice()
-    {
-
     }
 
     public void GiveTheObject()
