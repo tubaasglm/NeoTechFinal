@@ -26,6 +26,7 @@ public class TriggerForPanelButton : MonoBehaviour      //  ITS WORK !
 
     void OnTriggerStay(Collider other)
     {
+        Cursor.visible = true;
         if (PanelChoice)
             if (Input.GetKeyDown(KeyCode.P))
             {
