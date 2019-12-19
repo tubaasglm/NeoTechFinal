@@ -22,8 +22,8 @@ public class NPC : MonoBehaviour
     public string[] sentences;
 
     //public GameObject[] buttons;
-    public GameObject button1;
-    public GameObject button2;
+   // public GameObject button1;
+   // public GameObject button2;
 
     void Start()
     {
