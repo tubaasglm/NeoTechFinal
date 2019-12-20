@@ -123,6 +123,7 @@ public class DialogueSystem : MonoBehaviour
     private IEnumerator DisplayString(string stringToDisplay)
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         if (outOfRange == false)
         {
             int stringLength = stringToDisplay.Length;
